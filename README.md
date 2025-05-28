@@ -9,29 +9,29 @@
 ```bash
 # Клонируем репозиторий
 curl -sL https://raw.githubusercontent.com/vasyagun/nockchain/main/bootstrap_nockchain.sh | bash
-
+```
 ```bash
 # Перейти в папку проекта:
 cd /root/nockchain
-
+```
 ```bash
 # Создать .env файл с ключом для майнинга:
 nano .env
-
+```
 ```bash
 # Вставь туда/редактируй:
 RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=info
 MINIMAL_LOG_FORMAT=true
 MINING_PUBKEY= СЮДА ПИШИ СВОЙ КОШЕЛЬ
-
+```
 ```bash
 # Сделать скрипт запуска исполняемым:
 chmod +x scripts/run_nockchain_miner.sh
-
+```
 ```bash
 # Запустить майнинг:
 ./scripts/run_nockchain_miner.sh
-
+```
 
 ```bash
 # Вот так выглядит синхорн блоков перед майнингом:
@@ -69,3 +69,4 @@ I (10:17:33) [%mining-on 18.423.616.470.032.832.226 6.250.162.932.000.668.855 7.
 I (10:17:33) [no] kernel::form: No existing state found - initializing fresh state
 I (10:17:33) candidate block timestamp updated: 0x8000000d36d4f03d
 I (10:17:35) [%build-hash 0v1.lgic1]
+```

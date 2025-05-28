@@ -5,36 +5,34 @@
 ---
 
 ## 🚀 Быстрый старт
-
-```bash
 # Клонируем репозиторий
+```bash
 curl -sL https://raw.githubusercontent.com/vasyagun/nockchain/main/bootstrap_nockchain.sh | bash
 ```
-```bash
 # Перейти в папку проекта:
+```bash
 cd /root/nockchain
 ```
-```bash
 # Создать .env файл с ключом для майнинга:
+```bash
 nano .env
 ```
-```bash
 # Вставь туда/редактируй:
+```bash
 RUST_LOG=info,nockchain=info,nockchain_libp2p_io=info,libp2p=info,libp2p_quic=info
 MINIMAL_LOG_FORMAT=true
 MINING_PUBKEY= СЮДА ПИШИ СВОЙ КОШЕЛЬ
 ```
-```bash
 # Сделать скрипт запуска исполняемым:
+```bash
 chmod +x scripts/run_nockchain_miner.sh
 ```
-```bash
 # Запустить майнинг:
+```bash
 ./scripts/run_nockchain_miner.sh
 ```
-
-```bash
 # Вот так выглядит синхорн блоков перед майнингом:
+```bash
 # ./scripts/run_nockchain_miner.sh
 
     _   _            _        _           _

@@ -68,3 +68,58 @@ I (10:17:33) [no] kernel::form: No existing state found - initializing fresh sta
 I (10:17:33) candidate block timestamp updated: 0x8000000d36d4f03d
 I (10:17:35) [%build-hash 0v1.lgic1]
 ```
+
+
+
+### Как сгенерить кошелек 
+
+# В папке проекта nockchain, после компиляции
+```bash
+nockchain-wallet keygen
+```
+Далее приложение выведет тебе все твои данные типо:
+```bash
+Keygen
+
+New Public Key
+
+"3c9qSJyairLs3AsvHLPENuie....................Up64rx5GN7CgUb7WAxWtkNfmVDHzBBBf7QoebYnr"
+
+
+
+New Private Key
+
+"AUjxx1ZL.................iN2HqJc5g"
+
+
+
+Chain Code
+
+"69kRtCD.................JByMa6"
+
+
+
+Seed Phrase
+
+'cattle dirt crucial mystery ............... taste tip case wall leader also sheriff'
+```
+# Backup Keys
+```bash
+nockchain-wallet export-keys
+```
+
+```bash
+nockchain-wallet import-keys --input keys.export
+```
+
+
+### Проверить баланс
+```bash
+nockchain-wallet --nockchain-socket .socket/nockchain_npc.sock list-notes
+```
+Вывод будет что то вроде:
+```bash
+- name: [first='xxxxx' last='xxxxx']
+- assets: 2.576.980.378
+- source: [p=[BLAH] is-coinbase=%.y]
+```

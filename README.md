@@ -47,7 +47,7 @@ export MINING_PUBKEY="ВАШ_ПУБЛИЧНЫЙ_КЛЮЧ"
 * Запустите майнинг вручную:
 
   ```bash
-  cd ~/nockchain && bash ./scripts/run_nockchain_miner.s
+  cd ~/nockchain && bash ./scripts/run_nockchain_miner.sh
   ```
 
 ## 🚀 Дополнительно: Ускоренная синхронизация через чекпоинт

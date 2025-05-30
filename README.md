@@ -82,6 +82,7 @@ export MINING_PUBKEY="ВАШ_ПУБЛИЧНЫЙ_КЛЮЧ"
 
 По вопросам запуска или ошибок — создайте Issue или напишите автору в Telegram: [@vasyagun](https://t.me/vasyagun)
 
+
 # Вот так выглядит синхорн блоков перед майнингом:
 ```bash
 # ./scripts/run_nockchain_miner.sh
@@ -174,3 +175,27 @@ nockchain-wallet --nockchain-socket .socket/nockchain_npc.sock list-notes
 - assets: 2.576.980.378
 - source: [p=[BLAH] is-coinbase=%.y]
 ```
+
+
+# Ошибки и их решение
+
+1) Если при запуске майнинга видим ошибку:
+```
+I (12:17:17) libp2p_swarm: local_peer_id=12D3KooWQ4xDnDHzBLb7oAvNwinuaCw1SaGyp8pEhiBrWYVVRcyG
+Error: Os { code: 98, kind: AddrInUse, message: "Address already in use" }
+```
+
+Значит нужно ввести команду:
+```bash
+rm -rf .socket
+```
+
+2) Если при запуске майнига пошел синхрон, но вылезает ошибка в логе:
+```
+Could not load mining kernel: OneshotChannelError(RecvError(()))
+2025-05-29T06:04:55.399174Z  WARN nockchain::mining: Error during mining attempt: JoinError::Panic(Id(922), "Could not load mining kernel: OneshotChannelError(RecvError(()))", ...
+```
+
+Значит нужно остановить процесс и ввести команду:
+```bash
+sudo sysctl vm.overcommit_memory=1
